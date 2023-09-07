@@ -10,11 +10,7 @@
 #define FRIEND_LIST_SIZE 0x64 // 100
 #define FRIEND_MII_STORE_DATA_SIZE 0x60 // 96
 
-typedef struct
-{
-	u32 principalId;
-	u64 localFriendCode;
-} FriendKey;
+
 
 typedef struct
 {
@@ -178,30 +174,5 @@ typedef struct
     u8 platform;    // Platform code.
 } Profile;
 
-Result frdInit(void);
-void frdExit(void);
-Result FRDU_IsOnline(bool * state);
-Result FRDU_HasLoggedIn(bool * state);
-Result FRD_Login(Handle event);
-Result FRD_Logout(void);
-Result FRD_GetMyFriendKey(FriendKey * key);
-Result FRD_GetMyPreference(bool * isPublicMode, bool * isShowGameName, bool * isShowPlayedGame);
-Result FRD_GetMyProfile(Profile * profile);
-Result FRD_GetMyPresence(MyPresence * myPresence);
-Result FRD_GetMyScreenName(u16 * name);
-Result FRD_GetMyMii(MiiStoreData * mii);
-Result FRD_GetMyComment(u16 * comment);
-Result FRD_GetMyPlayingGame(u64 * titleId);
-Result FRD_GetMyFavoriteGame(u64 * titleId);
-Result FRD_IsFromFriendList(u64 friendCode, bool * isFromList);
-Result FRD_UpdateGameModeDescription(const wchar_t * desc);
-Result FRD_PrincipalIdToFriendCode(u32 principalId, u64 * friendCode);
-Result FRD_FriendCodeToPrincipalId(u64 friendCode, u32 * principalId);
-Result FRD_GetFriendKeyList(FriendKey * friendKeyList, size_t * num, size_t offset, size_t size);
-Result FRD_GetFriendMii(MiiStoreData * miiDataList, const FriendKey * friendKeyList, size_t size);
-Result FRD_GetFriendProfile(Profile * profileList, const FriendKey * friendKeyList, size_t size);
-Result FRD_GetFriendPlayingGame(u64 * titleid, const FriendKey * friendKeyList, size_t size);
-Result FRD_IsValidFriendCode(u64 friendCode, bool * isValid);
-Result FRD_SetClientSdkVersion(u32 sdkVer);
 
 #endif

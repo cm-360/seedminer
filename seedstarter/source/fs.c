@@ -4,6 +4,9 @@
 
 u32 keyy[4]={0};
 
+FS_Archive fsArchive, ctrArchive;
+
+
 #include "fs.h"
 
 void openArchive(FS_ArchiveID id)

@@ -3,7 +3,6 @@
 
 #include <3ds.h>
 
-FS_Archive fsArchive, ctrArchive;
 
 void openArchive(FS_ArchiveID id);
 void closeArchive(FS_ArchiveID id);
